@@ -1,0 +1,7 @@
+yahooweather:weather:berlin [ location=638242 ]
+astro:sun:home   [ geolocation="52.5200066,13.4049540", interval=60 ]
+astro:moon:home  [ geolocation="52.5200066,13.4049540", interval=60 ]
+ntp:ntp:demo [ hostname="nl.pool.ntp.org", refreshInterval=60, refreshNtp=30 ]
+exec:command:light [ command="curl -XGET http://raspberrypi:8080/proxy/coap://[aaaa::212:4b00:5af:825a]/sensors/light", transform="REGEX(.*?([0-9]+).*)", interval=60 ]
+
+// vim: syntax=Xtend
