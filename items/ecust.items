@@ -1,11 +1,11 @@
 Group gFF           "First Floor"   <firstfloor>
-Group gGF           "Ground Floor"  <groundfloor>
-Group gC            "Cellar"        <cellar>
-Group Garden        "Garden"        <garden>
-Group Weather       "Weather"       <sun>
+//Group gGF           "Ground Floor"  <groundfloor>
+//Group gC            "Cellar"        <cellar>
+//Group Garden        "Garden"        <garden>
+//Group Weather       "Weather"       <sun>
 
-Group Status
-Group Shutters
+//Group Status
+//Group Shutters
 
 //Group GF_Living     "Living Room"   <video>     (gGF)
 //Group GF_Kitchen    "Kitchen"       <kitchen>   (gGF)
@@ -19,22 +19,26 @@ Group Shutters
 //Group FF_Corridor   "Corridor"      <corridor>  (gFF)
 
 Group FF_302       	"302"      		<classroom>  (gFF)
-Group FF_303     	"303"        	<classroom>  (gFF)
-Group FF_305      	"305"  			<classroom>  (gFF)
-Group FF_307        "307"       	<classroom>  (gFF)
-Group FF_309   		"309"      		<classroom>  (gFF)
+//Group FF_303     	"303"        	<classroom>  (gFF)
+//Group FF_305      	"305"  			<classroom>  (gFF)
+//Group FF_307        "307"       	<classroom>  (gFF)
+//Group FF_309   		"309"      		<classroom>  (gFF)
 
 Group FF_302_Light    "light"      	<light>  	(FF_302)
 
 Group FF_302_Dimming  "dimming"     <slider>  	(FF_302)
 
-Group FF_302_seat  	"seat"     		<classroom>  (FF_302)
+Group FF_302_seat  	"seat"     		<seat>  (FF_302)
 
 String VoiceCommand
+
 String Photometry_FF_0			"教室光照度 [%s Lux]"  		<sun> 		(FF_302) { channel="exec:command:light:output" }
-Contact Window_FF_1 			"窗 [MAP(zh.map):%s]"    	(FF_302, Windows)
-Contact Door_FF_1   			"门 [MAP(zh.map):%s]"     	(FF_302, Windows)
-Number Temperature_FF_0      	"温度 [%.1f °C]" 	<temperature>   (Temperature, FF_302)
+String Human_FF_0				"座位 [MAP(zh.map):%s]"  					<human> 	(FF_302) { channel="exec:command:human:output" }
+String Hello_FF_0				"Hello [%s]"  					<human> 	(FF_302) { channel="exec:command:hello:output" }
+
+//Contact Window_FF_1 			"窗 [MAP(zh.map):%s]"    	(FF_302, Windows)
+//Contact Door_FF_1   			"门 [MAP(zh.map):%s]"     	(FF_302, Windows)
+//Number Temperature_FF_0      	"温度 [%.1f °C]" 	<temperature>   (Temperature, FF_302)
 
 
 Switch Light_FF_7_2				"四排一列"					<light> 	(FF_302_Light, Lights)
@@ -52,98 +56,99 @@ Switch Light_FF_1_8				"一排三列"					<light> 	(FF_302_Light, Lights)
 Switch Light_FF_l				"讲台灯左"					<light> 	(FF_302_Light, Lights)
 Switch Light_FF_r				"讲台灯右"					<light> 	(FF_302_Light, Lights)
 
-Dimmer DimmedLight  			"Dimmer [%s]"      			<slider> 	(FF_302_Dimming, Lights)
+Dimmer DimmedLight  			"Dimmer [%s]"      			<slider> 	(FF_302_Dimming)
 
-Switch FF_302_seat_0_0 			"一排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_0_1 			"一排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_0_3 			"一排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_0_4 			"一排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_0_5 			"一排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_0_6 			"一排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_0_7 			"一排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_0_9 			"一排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_0_10			"一排九列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_0 			"二排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_1 			"二排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_3 			"二排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_4 			"二排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_5 			"二排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_6 			"二排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_7 			"二排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_9 			"二排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_1_10 		"二排九列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_0 			"三排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_1 			"三排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_3 			"三排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_4 			"三排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_5 			"三排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_6 			"三排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_7 			"三排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_9 			"三排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_2_10 		"三排九列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_0 			"四排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_1 			"四排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_3 			"四排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_4 			"四排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_5 			"四排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_6 			"四排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_7 			"四排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_9 			"四排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_3_10 		"四排九列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_0 			"五排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_1 			"五排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_3 			"五排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_4 			"五排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_5 			"五排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_6 			"五排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_7 			"五排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_9 			"五排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_4_10 		"五排九列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_0 			"六排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_1 			"六排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_3 			"六排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_4 			"六排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_5 			"六排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_6 			"六排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_7 			"六排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_9 			"六排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_5_10 		"六排九列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_0 			"七排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_1 			"七排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_3 			"七排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_4 			"七排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_5 			"七排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_6 			"七排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_7 			"七排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_9 			"七排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_6_10 		"七排九列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_0 			"八排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_1 			"八排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_3 			"八排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_4 			"八排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_5 			"八排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_6 			"八排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_7 			"八排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_9 			"八排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_7_10 		"八排九列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_0 			"九排一列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_1 			"九排二列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_3 			"九排三列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_4 			"九排四列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_5 			"九排五列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_6 			"九排六列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_7 			"九排七列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_9 			"九排八列"    	(FF_302_seat, Seats)
-Switch FF_302_seat_8_10 		"九排九列"    	(FF_302_seat, Seats)
+Switch FF_302_seat_0_0 			"一排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_0_1 			"一排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_0_3 			"一排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_0_4 			"一排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_0_5 			"一排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_0_6 			"一排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_0_7 			"一排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_0_9 			"一排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_0_10			"一排九列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_0 			"二排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_1 			"二排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_3 			"二排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_4 			"二排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_5 			"二排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_6 			"二排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_7 			"二排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_9 			"二排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_1_10 		"二排九列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_0 			"三排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_1 			"三排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_3 			"三排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_4 			"三排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_5 			"三排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_6 			"三排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_7 			"三排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_9 			"三排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_2_10 		"三排九列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_0 			"四排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_1 			"四排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_3 			"四排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_4 			"四排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_5 			"四排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_6 			"四排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_7 			"四排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_9 			"四排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_3_10 		"四排九列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_0 			"五排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_1 			"五排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_3 			"五排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_4 			"五排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_5 			"五排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_6 			"五排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_7 			"五排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_9 			"五排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_4_10 		"五排九列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_0 			"六排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_1 			"六排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_3 			"六排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_4 			"六排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_5 			"六排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_6 			"六排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_7 			"六排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_9 			"六排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_5_10 		"六排九列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_0 			"七排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_1 			"七排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_3 			"七排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_4 			"七排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_5 			"七排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_6 			"七排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_7 			"七排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_9 			"七排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_6_10 		"七排九列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_0 			"八排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_1 			"八排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_3 			"八排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_4 			"八排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_5 			"八排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_6 			"八排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_7 			"八排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_9 			"八排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_7_10 		"八排九列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_0 			"九排一列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_1 			"九排二列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_3 			"九排三列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_4 			"九排四列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_5 			"九排五列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_6 			"九排六列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_7 			"九排七列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_9 			"九排八列"    			    <human>		(FF_302_seat, Seats)
+Switch FF_302_seat_8_10 		"九排九列"    			    <human>		(FF_302_seat, Seats)
 
-/* active groups */
+///* active groups */
 Group:Switch:OR(ON, OFF)        Lights      "All Lights [(%d)]"
-Group:Switch:OR(ON, OFF)        Heating     "No. of Active Heatings [(%d)]"     <heating>
-Group:Number:AVG                Temperature "Avg. Room Temperature [%.1f °C]"   <temperature>   (Status)
-Group:Contact:OR(OPEN, CLOSED)  Windows     "Open windows [(%d)]"               <contact>
 Group:Switch:OR(ON, OFF)        Seats      	"All Seats [(%d)]"
 
-/* Lights */
+//Group:Switch:OR(ON, OFF)        Heating     "No. of Active Heatings [(%d)]"     <heating>
+//Group:Number:AVG                Temperature "Avg. Room Temperature [%.1f °C]"   <temperature>   (Status)
+//Group:Contact:OR(OPEN, CLOSED)  Windows     "Open windows [(%d)]"               <contact>
+
+///* Lights */
 //Dimmer Light_GF_Living_Table        "Table"     (GF_Living, Lights)     ["Lighting"]
 //Switch Light_GF_Corridor_Ceiling    "Ceiling"       (GF_Corridor, Lights)
 //Switch Light_GF_Kitchen_Ceiling     "Ceiling"       (GF_Kitchen, Lights)
@@ -177,72 +182,72 @@ Group:Switch:OR(ON, OFF)        Seats      	"All Seats [(%d)]"
 //Switch Heating_FF_Office    "Office"        <heating>   (FF_Office, Heating)
 //Switch Heating_FF_Child     "Child's Room"  <heating>   (FF_Child, Heating)
 //Switch Heating_FF_Bed       "Bedroom"       <heating>   (FF_Bed, Heating)
-
-/* Rollershutters */
-Rollershutter Shutter_GF_Toilet         "Toilet"        (GF_Toilet, Shutters)
-Rollershutter Shutter_GF_Kitchen        "Kitchen"       (GF_Kitchen, Shutters)
-Rollershutter Shutter_GF_Living         "Livingroom"    (GF_Living, Shutters)
-
-Rollershutter Shutter_FF_Bed            "Bedroom"       (FF_Bed, Shutters)
-Rollershutter Shutter_FF_Bath           "Bath"          (FF_Bath, Shutters)
-Rollershutter Shutter_FF_Office_Window  "Office Window" (FF_Office, Shutters)
-Rollershutter Shutter_FF_Office_Door    "Office Door"   (FF_Office, Shutters)
-
-Switch Shutter_all
-
-/* Indoor Temperatures */
-Number Temperature_GF_Corridor  "Temperature [%.1f °C]" <temperature>   (Temperature, GF_Corridor)
-Number Temperature_GF_Toilet    "Temperature [%.1f °C]" <temperature>   (Temperature, GF_Toilet)
-Number Temperature_GF_Living    "Temperature [%.1f °C]" <temperature>   (Temperature, GF_Living)
-Number Temperature_GF_Kitchen   "Temperature [%.1f °C]" <temperature>   (Temperature, GF_Kitchen, Thermostat) ["CurrentTemperature"]
-Number Temperature_FF_Bath      "Temperature [%.1f °C]" <temperature>   (Temperature, FF_Bath)
-Number Temperature_FF_Office    "Temperature [%.1f °C]" <temperature>   (Temperature, FF_Office)
-Number Temperature_FF_Child     "Temperature [%.1f °C]" <temperature>   (Temperature, FF_Child)
-Number Temperature_FF_Bed       "Temperature [%.1f °C]" <temperature>   (Temperature, FF_Bed)
-
-/* Windows */
-Contact Window_GF_Frontdoor     "Frontdoor [MAP(en.map):%s]"        (GF_Corridor, Windows)
-Contact Window_GF_Kitchen       "Kitchen [MAP(en.map):%s]"          (GF_Kitchen, Windows)
-Contact Window_GF_Living        "Terrace door [MAP(en.map):%s]"     (GF_Living, Windows)
-Contact Window_GF_Toilet        "Toilet [MAP(en.map):%s]"           (GF_Toilet, Windows)
-
-Contact Window_FF_Bath          "Bath [MAP(en.map):%s]"             (FF_Bath, Windows)
-Contact Window_FF_Bed           "Bedroom [MAP(en.map):%s]"          (FF_Bed, Windows)
-Contact Window_FF_Office_Window "Office Window [MAP(en.map):%s]"    (FF_Office, Windows)
-Contact Window_FF_Office_Door   "Balcony Door [MAP(en.map):%s]"     (FF_Office, Windows)
-
-Contact Garage_Door             "Garage Door [MAP(en.map):%s]"      (Garden, Windows)
-
-Group Weather_Chart
-Number Weather_Temperature      "Outside Temperature [%.1f °C]" <temperature> (Weather, Weather_Chart) { channel="yahooweather:weather:berlin:temperature" }
-Number Weather_Temp_Max         "Todays Maximum [%.1f °C]"      <temperature> (Weather, Weather_Chart)
-Number Weather_Temp_Min         "Todays Minimum [%.1f °C]"      <temperature> (Weather, Weather_Chart)
-Number Weather_Chart_Period     "Chart Period"
-DateTime Weather_LastUpdate     "Last Update [%1$ta %1$tR]"     <clock>
-Number Sun_Elevation            "Sun Elevation"                 <sun>       { channel = "astro:sun:home:position#elevation" }
-Number Sun_Azimuth              "Sun Azimuth"                   <sun>       { channel = "astro:sun:home:position#azimuth" }
-DateTime Sunrise_Time           "Sunrise [%1$tH:%1$tM]"         <sunrise>   { channel = "astro:sun:home:rise#start" }
-DateTime Sunset_Time            "Sunset [%1$tH:%1$tM]"          <sunset>    { channel = "astro:sun:home:set#start" }
-Number Moon_Elevation           "Moon Elevation"                <moon>      { channel = "astro:moon:home:position#elevation" }
-Number Moon_Azimuth             "Moon Azimuth"                  <moon>      { channel = "astro:moon:home:position#azimuth" }
-String Moon_Phase               "Moon Phase"                    <moon>      { channel = "astro:moon:home:phase#name" }
-
-/* Demo items */
-DateTime CurrentDate            "Date [%1$tA, %1$td.%1$tm.%1$tY]"   <calendar>  { channel="ntp:ntp:demo:dateTime" }
-Switch DemoSwitch               "Switch"
-Dimmer DimmedLight              "Dimmer [%d %%]"        <slider>
-Color  RGBLight                 "RGB Light"             <slider>
-Rollershutter DemoShutter       "Roller Shutter"
-Dimmer DemoBlinds               "Blinds [%d %%]"        <rollershutter>
-Number Scene_General            "Scene"                 <sofa>
-Number Radio_Station            "Radio"                 <network>
-Dimmer Volume                   "Volume [%.1f %%]"
-Location DemoLocation           "Brandenburg Gate Berlin"
-Number Wifi_Level               "Wifi Level [%d/4]"     <signal>        (FF_Office)
-String ImageURL                 "Image URL [%s]"
-
-Group Thermostat                "Thermostat"            <temperature>                    ["Thermostat"]
-Number Temperature_Setpoint     "Temperature [%.1f °C]" <temperature>    (Thermostat)    ["TargetTemperature"]
-String Thermostat_Mode          "Thermostat Mode [%s]"  <temperature>    (Thermostat)    ["homekit:HeatingCoolingMode"]
+//
+///* Rollershutters */
+//Rollershutter Shutter_GF_Toilet         "Toilet"        (GF_Toilet, Shutters)
+//Rollershutter Shutter_GF_Kitchen        "Kitchen"       (GF_Kitchen, Shutters)
+//Rollershutter Shutter_GF_Living         "Livingroom"    (GF_Living, Shutters)
+//
+//Rollershutter Shutter_FF_Bed            "Bedroom"       (FF_Bed, Shutters)
+//Rollershutter Shutter_FF_Bath           "Bath"          (FF_Bath, Shutters)
+//Rollershutter Shutter_FF_Office_Window  "Office Window" (FF_Office, Shutters)
+//Rollershutter Shutter_FF_Office_Door    "Office Door"   (FF_Office, Shutters)
+//
+//Switch Shutter_all
+//
+///* Indoor Temperatures */
+//Number Temperature_GF_Corridor  "Temperature [%.1f °C]" <temperature>   (Temperature, GF_Corridor)
+//Number Temperature_GF_Toilet    "Temperature [%.1f °C]" <temperature>   (Temperature, GF_Toilet)
+//Number Temperature_GF_Living    "Temperature [%.1f °C]" <temperature>   (Temperature, GF_Living)
+//Number Temperature_GF_Kitchen   "Temperature [%.1f °C]" <temperature>   (Temperature, GF_Kitchen, Thermostat) ["CurrentTemperature"]
+//Number Temperature_FF_Bath      "Temperature [%.1f °C]" <temperature>   (Temperature, FF_Bath)
+//Number Temperature_FF_Office    "Temperature [%.1f °C]" <temperature>   (Temperature, FF_Office)
+//Number Temperature_FF_Child     "Temperature [%.1f °C]" <temperature>   (Temperature, FF_Child)
+//Number Temperature_FF_Bed       "Temperature [%.1f °C]" <temperature>   (Temperature, FF_Bed)
+//
+///* Windows */
+//Contact Window_GF_Frontdoor     "Frontdoor [MAP(en.map):%s]"        (GF_Corridor, Windows)
+//Contact Window_GF_Kitchen       "Kitchen [MAP(en.map):%s]"          (GF_Kitchen, Windows)
+//Contact Window_GF_Living        "Terrace door [MAP(en.map):%s]"     (GF_Living, Windows)
+//Contact Window_GF_Toilet        "Toilet [MAP(en.map):%s]"           (GF_Toilet, Windows)
+//
+//Contact Window_FF_Bath          "Bath [MAP(en.map):%s]"             (FF_Bath, Windows)
+//Contact Window_FF_Bed           "Bedroom [MAP(en.map):%s]"          (FF_Bed, Windows)
+//Contact Window_FF_Office_Window "Office Window [MAP(en.map):%s]"    (FF_Office, Windows)
+//Contact Window_FF_Office_Door   "Balcony Door [MAP(en.map):%s]"     (FF_Office, Windows)
+//
+//Contact Garage_Door             "Garage Door [MAP(en.map):%s]"      (Garden, Windows)
+//
+//Group Weather_Chart
+//Number Weather_Temperature      "Outside Temperature [%.1f °C]" <temperature> (Weather, Weather_Chart) { channel="yahooweather:weather:berlin:temperature" }
+//Number Weather_Temp_Max         "Todays Maximum [%.1f °C]"      <temperature> (Weather, Weather_Chart)
+//Number Weather_Temp_Min         "Todays Minimum [%.1f °C]"      <temperature> (Weather, Weather_Chart)
+//Number Weather_Chart_Period     "Chart Period"
+//DateTime Weather_LastUpdate     "Last Update [%1$ta %1$tR]"     <clock>
+//Number Sun_Elevation            "Sun Elevation"                 <sun>       { channel = "astro:sun:home:position#elevation" }
+//Number Sun_Azimuth              "Sun Azimuth"                   <sun>       { channel = "astro:sun:home:position#azimuth" }
+//DateTime Sunrise_Time           "Sunrise [%1$tH:%1$tM]"         <sunrise>   { channel = "astro:sun:home:rise#start" }
+//DateTime Sunset_Time            "Sunset [%1$tH:%1$tM]"          <sunset>    { channel = "astro:sun:home:set#start" }
+//Number Moon_Elevation           "Moon Elevation"                <moon>      { channel = "astro:moon:home:position#elevation" }
+//Number Moon_Azimuth             "Moon Azimuth"                  <moon>      { channel = "astro:moon:home:position#azimuth" }
+//String Moon_Phase               "Moon Phase"                    <moon>      { channel = "astro:moon:home:phase#name" }
+//
+///* Demo items */
+//DateTime CurrentDate            "Date [%1$tA, %1$td.%1$tm.%1$tY]"   <calendar>  { channel="ntp:ntp:demo:dateTime" }
+//Switch DemoSwitch               "Switch"
+//Dimmer DimmedLight              "Dimmer [%d %%]"        <slider>
+//Color  RGBLight                 "RGB Light"             <slider>
+//Rollershutter DemoShutter       "Roller Shutter"
+//Dimmer DemoBlinds               "Blinds [%d %%]"        <rollershutter>
+//Number Scene_General            "Scene"                 <sofa>
+//Number Radio_Station            "Radio"                 <network>
+//Dimmer Volume                   "Volume [%.1f %%]"
+//Location DemoLocation           "Brandenburg Gate Berlin"
+//Number Wifi_Level               "Wifi Level [%d/4]"     <signal>        (FF_Office)
+//String ImageURL                 "Image URL [%s]"
+//
+//Group Thermostat                "Thermostat"            <temperature>                    ["Thermostat"]
+//Number Temperature_Setpoint     "Temperature [%.1f °C]" <temperature>    (Thermostat)    ["TargetTemperature"]
+//String Thermostat_Mode          "Thermostat Mode [%s]"  <temperature>    (Thermostat)    ["homekit:HeatingCoolingMode"]
 
 // vim: syntax=Xtend

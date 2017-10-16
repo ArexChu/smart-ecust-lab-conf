@@ -1,4 +1,6 @@
 CLOSED=关
 OPEN=开
 NULL=无
- 
+
+0=空
+1=占用
