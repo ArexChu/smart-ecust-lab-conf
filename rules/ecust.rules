@@ -240,12 +240,10 @@ when
     Item Light_FF_l received command
 then
     if(receivedCommand==ON) {
-	//sendNotification("arexchu9@gmail.com", "Hello world!")
-	//executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_0 + dimmed_url + "g" + "@@-d@@" + "dimmed=99")
-	//executeCommandLine("/bin/sh@@/home/arex/smart-campus/smart-ecust/conf/automation/switch.sh@@81d8@@b@@on")
+	//sendNotification("zjfbob@sina.com", "Hello world!")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_0 + dimmed_url + "g" + "@@-d@@" + "dimmed=99")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_0 + dimmed_url + "g" + "@@-d@@" + "dimmed=100")
-	//executeCommandLine("/bin/sh@@/home/arex/smart-campus/smart-ecust/conf/automation/switch.sh@@81d8@@b@@off")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_0 + dimmed_url + "g" + "@@-d@@" + "dimmed=100")
     }
 end
 
