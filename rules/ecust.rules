@@ -16,6 +16,8 @@ val coap_url_3 = "coap://[aaaa::212:4b00:5af:80d5]/"
 val coap_url_2 = "coap://[aaaa::212:4b00:5af:825a]/"
 val coap_url_1 = "coap://[aaaa::212:4b00:5af:7f61]/"
 val coap_url_0 = "coap://[aaaa::212:4b00:5af:81a0]/"
+val video_path = "/home/arex/Videos/"
+val video_script_path = "/home/arex/smart-campus/smart-ecust/conf/automation/"
 
 //val Number light_rows = 4
 //val Number light_cols = 3
@@ -101,6 +103,17 @@ then
 	//				}
 	//			}
 	//		]
+end
+
+rule "Switch Vides"
+when
+    Item Videos received command
+then
+    if(receivedCommand==ON) {
+	executeCommandLine(video_script_path + "open-videos.sh casino.mkv")
+    } else if(receivedCommand==OFF) {
+	executeCommandLine(video_script_path + "close-videos.sh")
+    }
 end
 
 rule "Switch Light 7_2"
