@@ -17,7 +17,8 @@ val coap_url_2 = "coap://[aaaa::212:4b00:5af:825a]/"
 val coap_url_1 = "coap://[aaaa::212:4b00:5af:7f61]/"
 val coap_url_0 = "coap://[aaaa::212:4b00:5af:81a0]/"
 val video_path = "/home/arex/Videos/"
-val video_script_path = "/home/arex/smart-campus/smart-ecust/conf/automation/"
+//val video_script_path = "/home/arex/smart-campus/smart-ecust/conf/automation/"
+val video_script_path = "C:/Users/guchengyuan/Desktop/hello/"
 
 //val Number light_rows = 4
 //val Number light_cols = 3
@@ -42,8 +43,8 @@ when
     Item Seats received update
 then
 	//Seats.members.filter[s| s.state.toString == "ON"].forEach[s | 
-	//			var x = transform("REGEX", "FF_302_seat_([0-9])(.*)", s.name)
-	//			var y = transform("REGEX", "FF_302_seat_" + x + "_([0-9])", s.name)
+	//			var x = transform("REGEX", "FF_103_seat_([0-9])(.*)", s.name)
+	//			var y = transform("REGEX", "FF_103_seat_" + x + "_([0-9])", s.name)
 	//			for (var i = 0; i < light_rows; i++){
 	//				for (var j = 0; j < light_cols; j++){
 	//					if (Math::abs(Integer::parseInt(x) - Integer::parseInt(x_Light.get(i))) <= 1 && Math::abs(Integer::parseInt(y) - Integer::parseInt(y_Light.get(j))) <= 2){
@@ -58,8 +59,8 @@ then
 	//			}
 	//		]
 	//Seats.members.filter[s| s.state.toString == "OFF"].forEach[s | 
-	//			var x = transform("REGEX", "FF_302_seat_([0-9])(.*)", s.name)
-	//			var y = transform("REGEX", "FF_302_seat_" + x + "_([0-9])", s.name)
+	//			var x = transform("REGEX", "FF_103_seat_([0-9])(.*)", s.name)
+	//			var y = transform("REGEX", "FF_103_seat_" + x + "_([0-9])", s.name)
 
 	//			var	temp_x = newArrayList("0", "0", "0", "0")
 	//			var	temp_y = newArrayList("0", "0", "0", "0")
@@ -86,7 +87,7 @@ then
 	//			for (var k = 0; k < count; k++) {
 	//				for (var m = Integer::parseInt(temp_x.get(k)) - 1; m < Integer::parseInt(temp_x.get(k)) + 2 && flag == 0; m++) {
 	//					for (var n = Integer::parseInt(temp_y.get(k)) - 2; n < Integer::parseInt(temp_y.get(k)) + 3 && flag == 0; n++) {
-	//						var m_n_Seat = "FF_302_seat_" + m + "_" + n
+	//						var m_n_Seat = "FF_103_seat_" + m + "_" + n
 	//						logInfo("m_n_Seat", m_n_Seat)
 	//						Seats.members.filter[s| s.state.toString == "ON" && s.name == m_n_Seat].forEach[s |
 	//							flag = 1
@@ -107,12 +108,23 @@ end
 
 rule "Switch Vides"
 when
-    Item Videos received command
+    Item Videos1 received command
 then
     if(receivedCommand==ON) {
-	executeCommandLine(video_script_path + "open-videos.sh casino.mkv")
+	executeCommandLine(video_script_path + "open.bat 1.avi")
     } else if(receivedCommand==OFF) {
-	executeCommandLine(video_script_path + "close-videos.sh")
+	executeCommandLine(video_script_path + "kill.bat")
+    }
+end
+
+rule "Switch Vides"
+when
+    Item Videos4 received command
+then
+    if(receivedCommand==ON) {
+	executeCommandLine(video_script_path + "openssei.bat")
+    } else if(receivedCommand==OFF) {
+	executeCommandLine(video_script_path + "killssei.bat")
     }
 end
 

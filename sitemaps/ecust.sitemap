@@ -1,7 +1,7 @@
-sitemap ecust label="徐汇校区第四教学楼"
+sitemap ecust label="徐汇校区第七教学楼"
 {
 	Frame {
-		Group item=gFF label="三楼" icon="firstfloor"
+		Group item=gFF label="一楼" icon="firstfloor"
 		//Group item=gGF label="二楼" icon="groundfloor"
 		//Group item=gC label="一楼" icon="cellar"
 		//Group item=Garden icon="garden"
@@ -30,7 +30,7 @@ sitemap ecust label="徐汇校区第四教学楼"
     //        Text item=Moon_Phase
     //    }
 	//}
-    Frame {
+    	Frame {
 		//Text item=CurrentDate
 		Text label="总开关" icon="switch" {
 			Switch item=Lights mappings=[OFF="All Off", ON="All On"]
