@@ -11,6 +11,7 @@
 
 val http_url = "http://192.168.1.3:8080/proxy/coap://["
 val coap_url_case1 = "aaaa::212:4b00:5af:81eb"
+val coap_url_case2 = "aaaa::212:4b00:5af:80e2"
 val actuators_url = "]/actuators/leds?color="
 //val video_script_path = "/Users/arex/smart-lab/conf/automation/"
 //val lights_script_path = "/Users/arex/smart-lab/conf/automation/"
@@ -33,7 +34,29 @@ when
     Item Videos1 received command
 then
     if(receivedCommand==ON) {
-	executeCommandLine(video_script_path + "open.bat 1.avi")
+	executeCommandLine(video_script_path + "open.bat 超微电流测量仪.mp4")
+    } else if(receivedCommand==OFF) {
+	executeCommandLine(video_script_path + "kill.bat")
+    }
+end
+
+rule "Switch Videos2"
+when
+    Item Videos2 received command
+then
+    if(receivedCommand==ON) {
+	executeCommandLine(video_script_path + "open.bat 车宽测量仪.mp4")
+    } else if(receivedCommand==OFF) {
+	executeCommandLine(video_script_path + "kill.bat")
+    }
+end
+
+rule "Switch Videos3"
+when
+    Item Videos3 received command
+then
+    if(receivedCommand==ON) {
+	executeCommandLine(video_script_path + "open.bat 智慧教室.mp4")
     } else if(receivedCommand==OFF) {
 	executeCommandLine(video_script_path + "kill.bat")
     }
@@ -203,6 +226,162 @@ then
     } else if(receivedCommand==OFF) {
 	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled4" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number1"
+when
+    Item Light_Case1_Num1 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled1" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled1" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number2"
+when
+    Item Light_Case1_Num2 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled2" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled2" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number3"
+when
+    Item Light_Case1_Num3 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled3" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled3" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number4"
+when
+    Item Light_Case1_Num4 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled4" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled4" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number5"
+when
+    Item Light_Case1_Num5 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled5" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled5" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number6"
+when
+    Item Light_Case1_Num6 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled6" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled6" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number7"
+when
+    Item Light_Case1_Num7 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled7" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled7" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number8"
+when
+    Item Light_Case1_Num8 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled8" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "bled8" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number9"
+when
+    Item Light_Case1_Num9 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "dled1" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "dled1" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number10"
+when
+    Item Light_Case1_Num10 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "dled2" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "dled2" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number11"
+when
+    Item Light_Case1_Num11 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "dled3" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "dled3" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase2 Number12"
+when
+    Item Light_Case1_Num12 received command
+then
+    if(receivedCommand==ON) {
+	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "dled4" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case2 + " r")
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case2 + actuators_url + "dled4" + "@@-d@@" + "mode=" + "off")
     }
 end
 
