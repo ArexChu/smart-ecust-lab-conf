@@ -91,10 +91,8 @@ when
     Item Light_Case1_Num2 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled2" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled2" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -104,10 +102,8 @@ when
     Item Light_Case1_Num3 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled3" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled3" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -117,10 +113,8 @@ when
     Item Light_Case1_Num4 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled4" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled4" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -130,10 +124,8 @@ when
     Item Light_Case1_Num5 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled5" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled5" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -143,10 +135,8 @@ when
     Item Light_Case1_Num6 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled6" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled6" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -156,10 +146,8 @@ when
     Item Light_Case1_Num7 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled7" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled7" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -169,10 +157,8 @@ when
     Item Light_Case1_Num8 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled8" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "bled8" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -182,10 +168,8 @@ when
     Item Light_Case1_Num9 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled1" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled1" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -195,10 +179,8 @@ when
     Item Light_Case1_Num10 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled2" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled2" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -208,10 +190,8 @@ when
     Item Light_Case1_Num11 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled3" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled3" + "@@-d@@" + "mode=" + "off")
     }
 end
@@ -221,10 +201,8 @@ when
     Item Light_Case1_Num12 received command
 then
     if(receivedCommand==ON) {
-	//executeCommandLine(lights_script_path + "open-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled4" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
-	//executeCommandLine(lights_script_path + "close-lights.sh " + coap_url_case1 + " r")
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled4" + "@@-d@@" + "mode=" + "off")
     }
 end
