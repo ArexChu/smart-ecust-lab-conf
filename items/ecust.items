@@ -59,6 +59,8 @@ Switch Light_Case1_Num9				"展示柜展品9"					<light> 	(FF_302_Light, Lights
 Switch Light_Case1_Num10				"展示柜展品10"					<light> 	(FF_302_Light, Lights)
 Switch Light_Case1_Num11				"展示柜展品11"					<light> 	(FF_302_Light, Lights)
 Switch Light_Case1_Num12				"展示柜展品12"					<light> 	(FF_302_Light, Lights)
+Switch Light_Case1_Num13				"展示柜展品13"					<light> 	(FF_302_Light, Lights)
+Switch Light_Case1_Num14				"展示柜展品14"					<light> 	(FF_302_Light, Lights)
 
 ///* active groups */
 Group:Switch:OR(ON, OFF)        Lights      "All Lights [(%d)]"

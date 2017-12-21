@@ -11,6 +11,7 @@
 
 val http_url = "http://192.168.1.3:8080/proxy/coap://["
 val coap_url_case1 = "aaaa::212:4b00:5af:81eb"
+val coap_url_case1_b = "aaaa::212:4b00:5af:81df"
 val coap_url_case2 = "aaaa::212:4b00:5af:80e2"
 val coap_url_case3 = "aaaa::212:4b00:5af:8367"
 val coap_url_case4 = "aaaa::212:4b00:5af:8208"
@@ -206,6 +207,28 @@ then
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled4" + "@@-d@@" + "mode=" + "on")
     } else if(receivedCommand==OFF) {
 	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1 + actuators_url + "dled4" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase1 Number13"
+when
+    Item Light_Case1_Num13 received command
+then
+    if(receivedCommand==ON) {
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1_b + actuators_url + "bled1" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1_b + actuators_url + "bled1" + "@@-d@@" + "mode=" + "off")
+    }
+end
+
+rule "Switch Light ShowCase1 Number14"
+when
+    Item Light_Case1_Num14 received command
+then
+    if(receivedCommand==ON) {
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1_b + actuators_url + "bled2" + "@@-d@@" + "mode=" + "on")
+    } else if(receivedCommand==OFF) {
+	executeCommandLine("curl" + "@@-XPOST@@" + http_url + coap_url_case1_b + actuators_url + "bled2" + "@@-d@@" + "mode=" + "off")
     }
 end
 
